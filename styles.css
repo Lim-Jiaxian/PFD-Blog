@@ -48,10 +48,19 @@ h2{
     margin-bottom: 5%;
     padding: 20px 50px;
     box-sizing: border-box;
+    word-wrap: break-word;
+}
+.blog-post p{
+    text-align: center;
+    font-size: 1vw;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 @media only screen and (max-width: 900px) {
     .blog-post{
-        width: auto;
+        width: 80%;
+    }
+    .blog-post p{
+        font-size: 2vw;;
     }
 }
 
