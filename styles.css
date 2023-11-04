@@ -13,12 +13,12 @@ p{
 p.inset 
 {
     border-style: inset;
-    border-color:aquamarine;
+    border-color:white;
 }
 p.outset 
 {
     border-style: outset;
-    border-color: aquamarine;
+    border-color: white;
 }
 p{
     font-size: 30px;
@@ -51,7 +51,7 @@ h2{
     word-wrap: break-word;
 }
 .blog-post p{
-    text-align: center;
+    text-align: left;
     font-size: 1vw;
     font-weight: 500;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

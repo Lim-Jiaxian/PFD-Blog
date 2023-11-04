@@ -25,7 +25,7 @@
             The first week of PFD lesson involves the objectives of undertaking real-life IT projects by making use of
             scrum (Lightweight Framework) via different challenge statements. My team was assigned the challenge
             statement
-            of "Data Collection Applications." After a brainstorming session, we
+            of "Data Collection Applications". <br><br> After a brainstorming session, we
             arrived at a concept that involves utilizing both a mobile phone and a wristband to monitor the wearer's
             location. Additionally, we also plan to leverage the built-in Bluetooth functionality to communicate with
             other nearby devices. However, this idea concept is quite similar to an existing application called
@@ -46,7 +46,8 @@
             accurately correspond with the challenge statement. Subsequently, we have opted to redirect our efforts
             towards the development of a mobile Arduino
             pathway tracker that uses GPS. The device comprises an ESP32 MCU Module, which has Wi-Fi and Bluetooth
-            capabilities, as well as a GPS tracker to follow the user's movements. Additionally, there will be an AWS
+            capabilities, as well as a GPS tracker to follow the user's movements. <br><br> Additionally, there will be
+            an AWS
             API Gateway connection between the ESP32 and AWS DynamoDB, which will be used to store the location data
             gathered by the GPS. Finally, to plot the course that the user has travelled, the Python library Matplotlib
             will be utilized. While the current sprints are focused on research, this important work is essential to
@@ -54,12 +55,12 @@
             materials, I will be able to transition to development sprints and start building our project.
         </p>
         <br>
-        <p>SEER's Product Box</p>
-        <img src="./img/seer_productbox.png" class="center">
-        <p>This graph below outlines the resources required in Project SEER</p>
-        <img src="./img/project-plan.png" class="center">
+        <p style="text-align: center;">SEER's Product Box</p>
+        <img src="./img/Seer_productbox.png" class="center">
+        <p style="text-align: center;">This graph below outlines the resources required in Project SEER</p>
+        <img src="./img/Project-plan.png" class="center">
+        <p style="text-align: center;">- How the product works -</p>
         <p>
-            - How the product works - <br><br>
             Since the ESP32 module has a built-in Wi-Fi component, it can transmit the location tracks captured by the
             GPS to the AWS API Gateway. The AWS API Gateway then routes the data to AWS DynamoDB for storing all the
             captured locations. To monitor the security guard's patrol path, the staff can access the AWS DynamoDB via
@@ -69,7 +70,7 @@
             visualizations.
         </p>
         <br>
-        <p>- IBM Enterprise Design Thinking -</p>
+        <p style="text-align: center;">- IBM Enterprise Design Thinking -</p>
         <p>
             Apart from that, after completing the IBM Enterprise Design Thinking course, I learned how to apply the five
             stages of the design thinking process to solve real-world problems: empathize, define, ideate, prototype,
@@ -123,10 +124,36 @@
 
     <div class="blog-post" style="background-color:lightgoldenrodyellow;">
         <h2>- Week 3 -</h2>
-        <!--<img src="" height="250" width="600" class="center">
-        <img src="" class="center">-->
+        <img src="./img/Materials.jpg" class="center"><br>
         <p>
-            ...
+            Finally, after a week of waiting, I was finally able to get my hands on the ESP32 NodeMCU, a breadboard, and
+            a
+            couple of jumper wires. This mark the start and beginning of my journey to create the SEER GPS Tracker.
+            Despite not having the GPS Tracker device yet, i have initiated the process of conducting and testing the
+            evaluation of the ESP32 NodeMCU's functionality to ensure that it is in a proper working condition.
+
+            <br><br><img src="./img/Arduino_BM.png" class="center">
+            <br><img src="./img/Blink_Start.png" class="center"><br>
+
+            To begin testing the functionality of the ESP32 NodeMCU development board, I utilized the Arduino IDE,
+            an open-source integrated development environment that enables users to write, compile, and upload code to
+            Arduino boards. Since the ESP32 NodeMCU board is compatible with the Arduino IDE, I decided to use this
+            application to test its functionality.
+            <br><br>
+            Secondly, to ensure that my ESP32 NodeMCU board is properly supported by the Arduino IDE, I installed both
+            the Arduino
+            and Espressif Systems board packages for the ESP32. These packages contain all of the necessary files for
+            the Arduino IDE to compile and upload code to ESP32 boards. This is important because different Arduino
+            boards use different microcontrollers, and the Arduino IDE needs to know which microcontroller it is
+            generating code for in order to produce the correct machine code.
+            <br><br>
+            Lastly, i made use of an online simple testing blink start.ino file. Since the ESP32 NodeMCU
+            has a built-in LED that can be controlled using the same digital pin as the Arduino board. To test the
+            functionality of the ESP32 NodeMCU, i uploaded the blink start code to the ESP32 NodeMCU and observe the
+            behavior of the built-in LED. If the LED blinks on and off every second, then the ESP32 NodeMCU is
+            functioning properly.
+
+            <br><br><img src="./img/ESP32_Testing.gif" class="center"><br>
         </p>
     </div>
 
@@ -276,7 +303,7 @@
     <br>
     <br>
     <br>
-    <p class="inset"></p>
+    <p class="inset"></p><br><br>
 </body>
 
 </html>
