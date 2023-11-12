@@ -165,8 +165,41 @@
         <!--<img src="" height="250" width="600" class="center">
         <img src="" class="center">-->
         <p>
-            ...
+            Moving onto week 4, although we were unable to obtain a GPS tracker, my team and I continued to work on
+            finding solutions for plotting captured pathway locations on a map. We discovered a website guide: a GPS
+            tracker that uses an SD card to record GPS locations, which can then be
+            used to plot the coordinates on a map using a Python script with the Cartopy library. Since the website is
+            relevant to our GPS location project, we decided to use the website as a fundamental foundation to guide,
+            assist and enhance our SEER Project.
+            <br><br>
+            Website link: <a
+                href="https://makersportal.com/blog/portable-gps-tracker-with-arduino">https://makersportal.com/blog/portable-gps-tracker-with-arduino</a>
+            <br><br>
+            At the current moment, my team and i are limited to only ESP32 NodeMCU and the python script guide (from
+            makersportal) that is available to
+            be worked and improved on. Hence, I decided to fill in randomly generated latitude & longtitude around Ngee
+            Ann Polytechnic in a csv file to try and test if the python script is capable of plotting
+            the Geo locations on a map.
+            <br><br>
+            To plot the pathway map, I used Jupyter Notebook to compile and execute the Python script. Initially, the
+            execution failed because the Cartopy library was missing. (Cartopy is a Python library for geospatial data
+            processing and visualization. It is built on top of the Matplotlib library and provides a variety of
+            features with geospatial data and support map projections.) Thus, using the anaconda prompt, i installed the
+            library via pip install cartopy.
         </p>
+        <br><br>
+        <p style="text-align: center;">- Python script guide from Makersportal - </p>
+        <br><img src="./img/Python_S1.png" class="center"><br>
+        <br><img src="./img/Python_S2.png" class="center"><br>
+        <p style="text-align: center;">- How the python script works - </p>
+        <p>
+            It works by parsing the GPS coordinates from a CSV file, and then formatting them for use with
+            Cartopy. Next, it creates a Cartopy GeoAxes object and projects it using the coordinate reference system
+            (CRS) of a street map. It then sets the extent of the map, adds the street map image, and plots the GPS
+            points.
+        </p><br>
+        <p style="text-align: center;">- Map output from python script - </p>
+        <br><img src="./img/GPS_Map.png" class="center"><br><br>
     </div>
 
     <br>
@@ -174,9 +207,20 @@
     <br>
 
     <div class="blog-post" style="background-color:lightgreen;">
-        <h2>- Week 5 -</h2>
+        <h2>- Week 5 (Hackathon) -</h2><br>
         <!--<img src="" height="250" width="600" class="center">
         <img src="" class="center">-->
+        <p style="text-align: center;">- Day 1 - </p>
+        <p>
+            ...
+        </p>
+        <br>
+        <p style="text-align: center;">- Day 2 - </p>
+        <p>
+            ...
+        </p>
+        <br>
+        <p style="text-align: center;">- Day 3 - </p>
         <p>
             ...
         </p>
