@@ -16,7 +16,6 @@
     <p class="inset"></p>
     <br>
     <br>
-
     <div class="blog-post" style="background-color:lightblue;">
         <h2>- Week 1 -</h2>
         <p>
@@ -124,8 +123,7 @@
         <img src="./img/Materials.jpg" class="center"><br>
         <p>
             Finally, after a week of waiting, I was finally able to get my hands on the ESP32 NodeMCU, a breadboard, and
-            a
-            couple of jumper wires. This mark the start and beginning of my journey to create the SEER GPS Tracker.
+            a couple of jumper wires. This mark the start and beginning of my journey to create the SEER GPS Tracker.
             Despite not having the GPS Tracker device yet, i have initiated the process of conducting and testing the
             evaluation of the ESP32 NodeMCU's functionality to ensure that it is in a proper working condition.
         </p>
@@ -162,8 +160,6 @@
 
     <div class="blog-post" style="background-color:lightgray;">
         <h2>- Week 4 -</h2>
-        <!--<img src="" height="250" width="600" class="center">
-        <img src="" class="center">-->
         <p>
             Moving onto week 4, although we were unable to obtain a GPS tracker, my team and I continued to work on
             finding solutions for plotting captured pathway locations on a map. We discovered a website guide: a GPS
@@ -212,18 +208,62 @@
         <img src="" class="center">-->
         <p style="text-align: center;">- Day 1 - </p>
         <p>
-            ...
-        </p>
+            The first day of the hackathon, the long-awaited GPS Tracker finally arrived. I quickly got to work and connected it to my ESP32 NodeMCU to set the integration of the C++ code to bring the entire GPS Tracker system up. However, upon executing my first code sketch, the GPS Tracker failed to function as intended. 
+            <br><br>
+            The root cause of the malfunctioning GPS Tracker came from an error in referencing the wrong version of the ESP32 NodeMCU pin layout. Thus, leading to an incorrect pin configuration for the GPS Tracker. This mismatch between the expected and actual pin connections prevented the ESP32 NodeMCU from effectively establishing a connection and communicating with the GPS Tracker, rendering the entire system inoperable.
+            <br><br>
+            After some alterations, the output initially showed "unknown" location but displayed the correct date. However, rerunning the code caused a glitch, and the date reverted to 2001. Suspecting that there might be a CMOS battery issue, i researched more about the GPS device. The online research revealed that the Neo-M6 GPS HAT with Antenna for Raspberry Pi lacks a CMOS battery for date maintenance. It relies on the Raspberry Pi's power supply, losing date and time information when the Raspberry Pi is turned off.
+        </p><br>
+        <p style="text-align: center;">- ESP32 NodeMCU C++ Code - </p>
+        <br>
+        <img src="./img/Seer_GPS_C1.png" class="center">
+        <img src="./img/Seer_GPS_C2.png" class="center"><br><br>
         <br>
         <p style="text-align: center;">- Day 2 - </p>
         <p>
-            ...
-        </p>
+            Onto day 2 of the hackathon, due to time constraints in getting the Raspberry Pi to work, our team focused on plotting a map using generated GPS coordinates of latitude and longitude. 
+            <br><br>
+            To visualize the pathway traversed using the captured GPS coordinates of longitude and latitude, a Python script is employed, leveraging the functionalities of both Matplotlib and Cartopy libraries. This combination of tools enables the creation of an informative and visually appealing map that effectively conveys the movement patterns captured by the GPS data. Thus, allowing an evaluation to monitor potential areas of improvement or certain blind spots / unpatrolled sections of the security guard's route.
+            <br><br>
+            What is Matplotlib? <br><br> Matplotlib serves as the core framework for generating the map, providing a versatile platform for constructing and customizing various plot elements. Its extensive repertoire of functions and capabilities allows for precise control over the map's appearance, including the selection of projection, scale, and styling of geographical features.
+            <br><br>
+            What is Cartopy? <br><br> Cartopy, on the other hand, brings specialized expertise in handling geospatial data, seamlessly integrating with Matplotlib to enhance the map's geographical accuracy and context. Its advanced features enable the incorporation of coastline data, country borders, and other relevant geographical information, transforming the map into a comprehensive representation of the real world.
+        </p><br>
+        <p style="text-align: center;">- Python Code for pathway visualization - </p>
+        <br><img src="./img/Seer_Python_C1.png" class="center">
+        <img src="./img/Seer_Python_C2.png" class="center"><br>
+        <p style="text-align: center;">- Data in CSV file - </p>
+        <br><img src="./img/Csv-Data.png" class="center"><br>
+        <p style="text-align: center;">- Output from Python Code - </p>
+        <br><img src="./img/Seer_GPS_Output.png" class="center"><br><br>
         <br>
         <p style="text-align: center;">- Day 3 - </p>
         <p>
-            ...
+            Moving to the 3rd day of the hackathon, our team will present our GPS prototype, a solution designed to revolutionize security guard patrol monitoring in the security industry. Our innovative approach effectively addresses the challenge of recording security guard prowl paths, ensuring comprehensive coverage and mitigating potential security breaches.
+            <br><br><br>
+            Addressing the Challenge:
+            <br><br>
+            The security industry faces a persistent challenge: ensuring that security guards diligently follow their designated patrol routes, effectively safeguarding properties and personnel. Our prototype tackles this challenge head-on by providing a real-time, comprehensive solution for monitoring security guard patrols. Our system meticulously captures and records the security guard's every movement, providing a detailed record of their patrol path. This tracking capability enables immediate identification of any deviations from the established patrol route, allowing for timely intervention.
+            <br><br>
+            Innovation and Key Concepts:
+            <br><br>
+            Our prototype transcends conventional security solutions by incorporating groundbreaking features and adopting an innovative approach. At the core of our system lies a sophisticated GPS tracking technology that continuously monitors the security guard's movements, providing precise information about their patrol route. This real-time tracking capability goes beyond mere location monitoring; it captures the guard's pace, direction, and any pauses or deviations, creating a comprehensive picture of their patrol activities.
+            <br><br>
+            Complementing the GPS tracking system is a powerful data analytics platform that transforms raw patrol data into actionable insights. Our platform analyzes patrol patterns, identifying areas of frequent coverage, potential gaps in security, and any unusual deviations from established routes. These insights empower security managers to optimize patrol routes, ensuring that every area receives the necessary attention.
+        </p><br>
+        <p style="text-align: center;">- Slides containing: Problem Statements, Elevator Pitch and Potential issues - </p>
+        <br><img src="./img/Problem_Statement.png" class="center">
+        <img src="./img/Elevator_Pitch.png" class="center">
+        <img src="./img/Fears.png" class="center"><br>
+        <p style="text-align: center;">- Updated Product Box - </p>
+        <br><img src="./img/Product_Box.png" class="center"><br>
+        <p style="text-align: center;">- Updated Technical Solutions Map - </p>
+        <br><img src="./img/Technical_Solutions.png" class="center"><br>
+        <p style="text-align: center;">- Updated Technical Solutions Explanation - </p>
+        <p>
+            Firstly, the ESP32 NodeMCU with its built-in WiFi capabilities can effectively communicate with web servers and send data. In this scenario, the ESP32 will be used to collect the GPS coordinates, which will then be transmitted to a MySQL database via an HTTP POST request to the PHP Webpage. PHP, a scripting language, will handle the server-side processing of receiving the data from the ESP32, and storing it in the MySQL database. Next, a python script with multiple libraries such as matplotlib and cartopy will be used to plot out the entire route and pathway of the security guard to visualise for areas of improvements.
         </p>
+        <br><br><br>
     </div>
 
     <br>
@@ -231,84 +271,6 @@
     <br>
 
     <div class="blog-post" style="background-color:lightpink;">
-        <h2>- Week 6 -</h2>
-        <!--<img src="" height="250" width="600" class="center">
-        <img src="" class="center">-->
-        <p>
-            ...
-        </p>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-    <div class="blog-post" style="background-color:lightsalmon;">
-        <h2>- Week 7 -</h2>
-        <!--<img src="" height="250" width="600" class="center">
-        <img src="" class="center">-->
-        <p>
-            ...
-        </p>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-    <div class="blog-post" style="background-color:lightseagreen;">
-        <h2>- Week 8 -</h2>
-        <!--<img src="" height="250" width="600" class="center">
-        <img src="" class="center">-->
-        <p>
-            ...
-        </p>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-    <div class="blog-post" style="background-color:lightskyblue;">
-        <h2>- Week 9 -</h2>
-        <!--<img src="" height="250" width="600" class="center">
-        <img src="" class="center">-->
-        <p>
-            ...
-        </p>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-    <div class="blog-post" style="background-color:aquamarine;">
-        <h2>- Week 10 -</h2>
-        <!--<img src="" height="250" width="600" class="center">
-        <img src="" class="center">-->
-        <p>
-            ...
-        </p>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-    <div class="blog-post" style="background-color:aliceblue;">
-        <h2>- Week 11 -</h2>
-        <!--<img src="" height="250" width="600" class="center">
-        <img src="" class="center">-->
-        <p>
-            ...
-        </p>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-    <div class="blog-post" style="background-color:fuchsia;">
         <h2>- Week 12 -</h2>
         <!--<img src="" height="250" width="600" class="center">
         <img src="" class="center">-->
@@ -321,7 +283,7 @@
     <br>
     <br>
 
-    <div class="blog-post" style="background-color:indigo;">
+    <div class="blog-post" style="background-color:lightsalmon;">
         <h2>- Week 13 -</h2>
         <!--<img src="" height="250" width="600" class="center">
         <img src="" class="center">-->
@@ -334,7 +296,7 @@
     <br>
     <br>
 
-    <div class="blog-post" style="background-color:ivory;">
+    <div class="blog-post" style="background-color:lightseagreen;">
         <h2>- Week 14 -</h2>
         <!--<img src="" height="250" width="600" class="center">
         <img src="" class="center">-->
@@ -342,6 +304,33 @@
             ...
         </p>
     </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="blog-post" style="background-color:lightskyblue;">
+        <h2>- Week 15 -</h2>
+        <!--<img src="" height="250" width="600" class="center">
+        <img src="" class="center">-->
+        <p>
+            ...
+        </p>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="blog-post" style="background-color:aquamarine;">
+        <h2>- Week 16 -</h2>
+        <!--<img src="" height="250" width="600" class="center">
+        <img src="" class="center">-->
+        <p>
+            ...
+        </p>
+    </div>
+    
 
     <br>
     <br>
