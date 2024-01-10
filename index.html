@@ -297,8 +297,37 @@
         <!--<img src="" height="250" width="600" class="center">
         <img src="" class="center">-->
         <p>
-            ...
+            For the start of a new term in week 12, I have created a setup file for a database that consists of three distinct tables: Admin login, Security guard info, and Records for storing GPS coordinates. The database schema has been implemented in a MySQL database hosted on an XAMPP server. Furthermore, Apache has been used to host a webpage for the Seer application. Thus, allowing the ESP32 to communicate with the web server by sending an HTTP POST request to a PHP script, which subsequently adds the data to the database.
+            Besides that, two php files are created. One of the two php files contain the database connection to MySQL while the other php file checks for any incoming HTTP Post request. If so, it creates an sql statement to insert the incoming data that was in JSON (Java Script Object Notation) format converted to a php array before inserting to the database records.
         </p>
+        <br>
+        <p style="text-align: center;">- PHP Database Connection - </p>
+        <br><img src="./img/Php_DBConnection.png" class="center">
+        <p style="text-align: center;">- PHP Insert data in MySql Database - </p>
+        <br><img src="./img/PHP_PostData.png" class="center">
+        <br><br>
+        <p>
+            For the database creation, the admin login table has a primary key that automatically increments, as well as fields to store the email and password for admin login credentials.
+            The security guard table contains a primary key that automatically increments as security guard id and a field to store the name of each security guard.
+            In the records table, there is a primary key that automatically increments, along with the fields to store the security guard ID, record time, altitude, latitude, and longitude of the captured geographic coordinates. The security guard ID field in the records table is a foreign key that references the security guard table.
+        </p>
+        <br>
+        <p style="text-align: center;">- Database Setup Script - </p>
+        <br><img src="./img/DB_Setup.png" class="center">
+        <br>
+        <p>
+            The additional codes added to the ESP32 Nodemcu includes, declaring the address of the Apache server to the PHP file, allowing it to post the captured GPS coordinates. Before sending out the JSON string that contains information such as the security guard ID, record time, altitude, latitude, and longitude, the ESP32 first checks for a WiFi connection to ensure validity of the GPS coordinates. The information is then sent via an HTTP POST request to the PHP file, which inserts the data into the database records.
+        </p>
+        <br>
+        <p style="text-align: center;">- Declare Apache Server to send http request via a php file - </p>
+        <br><img src="./img/Apache_Server.png" class="center">
+        <p style="text-align: center;">- ESP32 code to send GEO coordinates in JSON via HTTP Post - </p>
+        <br><img src="./img/ESP32_JsonCode.png" class="center">
+        <p style="text-align: center;">- ESP32 Serial Output - </p>
+        <br><img src="./img/ESP32_JsonOutput.png" class="center">
+        <p style="text-align: center;">- phpMyAdmin Mysql Database records - </p>
+        <br><img src="./img/PHP_MysqlDB.png" class="center">
+        <br><br>
     </div>
 
     <br>
