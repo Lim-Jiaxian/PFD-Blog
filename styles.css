@@ -65,17 +65,13 @@ h2{
 img{
     border-radius: 5px;
 }
-.Top_Nav{
+.Top_Nav_Bar{
+    margin: auto;
     text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
-    height: 80px;
-    box-sizing: border-box;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+    background-color:dimgrey;
+    padding: 10;
+    width: 650px;
+    border-radius: 20px;
 }
 .button-nav {
     align-items: center;
@@ -105,7 +101,7 @@ img{
     touch-action: manipulation;
     white-space: nowrap;
     will-change: box-shadow,transform;
-    font-size: 18px;
+    font-size: 1vw;
 }
 .button-nav:focus {
     box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
@@ -146,7 +142,7 @@ transform: translateY(2px);
     touch-action: manipulation;
     white-space: nowrap;
     will-change: box-shadow,transform;
-    font-size: 18px;
+    font-size: 1vw;
 }
 .button-nav-back:focus {
     box-shadow: white 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
@@ -160,12 +156,22 @@ box-shadow: white 0 3px 7px inset;
 transform: translateY(2px);
 }
 @media only screen and (max-width: 900px) {
+    .Top_Nav_Bar{
+        width: 100%;
+    }
     .blog-post{
         width: 80%;
     }
     .blog-post p{
         font-size: 2vw;;
     }
+    .button-nav{
+        font-size: 2vw;
+    }
+    .button-nav-back{
+        font-size: 2vw;
+    }
+
 }
 
 
