@@ -157,7 +157,7 @@ transform: translateY(2px);
 }
 @media only screen and (max-width: 900px) {
     .Top_Nav_Bar{
-        width: 100%;
+        width: 90%;
     }
     .blog-post{
         width: 80%;
