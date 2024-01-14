@@ -378,8 +378,35 @@
         <!--<img src="" height="250" width="600" class="center">
         <img src="" class="center">-->
         <p>
-            ...
+            Moving onto week 13, I received the GY-63 MS5611 Barometric pressure sensor module to capture altitude indoors. The BMP sensor module is a high precision pressure sensor and comes with a built-in 24-bit ADC and can communicate with the ESP32 via I2C. By ulitizing the I2C communication protocol, the ESP32 can communicate with the BMP sensor module by sending and receiving data via the SDA and SCL pins.
+            <br><br>
+            The altitude provided by the BMP sensor module is more accurate than the GPS module, which is prone to errors due to the presence of obstacles and interference from the surrounding environment. As a result, the BMP sensor module is a more reliable source of altitude data for indoor use. Therefore, allowing the benefit of the altitude data to estimate the floor that a person is currently located at. 
+            <br><br>
+            Althought the BMP sensor module is capable of providing altitude data, it is unable to provide the exact floor location. This is because the altitude data is relative to the sea level, which is not the same as the floor level. Hence, the altitude data must be converted to the floor level before it can be used to estimate the floor location. 
+            <br><br> 
+            Besides that, there are also additional factors to include such as elevated ground.
+            For example, if a building is located on elevated ground, the altitude data is higher than the actual floor level which affects the altitude data. Thus, it must be adjusted to account for the elevation of the ground.
         </p>
+        <p style="text-align: center;">- GY-63 MS5611 Barometric Pressure Sensor Module - </p>
+        <br><img src="./img/BMP_Sensor.jpg" class="center">
+        <p style="text-align: center;">- ESP32 Barometric Pressure Sensor Code - </p>
+        <br><img src="./img/BMP_Code.png" class="center">
+        <p style="text-align: center;">- ESP32 output from Barometric Pressure Sensor - </p>
+        <br><img src="./img/Bmp_Output.png" class="center">
+        <p>
+            The estimated floor does not match the actual floor level from my house due to the small elevated ground. Therefore, i am currently working on refining the code to account for the elevation of the ground in the next few weeks.
+        </p>
+        <p style="text-align: center;">- Connected GPS module & BMP module together with ESP32 - </p>
+        <br><img src="./img/ESP32_Gps_Bmp.jpg" class="center">
+        <p>Due to the lack of male to male jumper wires, the placement of ESP32 Nodemcu, GPS and BMP modules on the breadboard is not possible at the moment. Thus, with some male to male & female to female jumper wires, the different components are temporarily connected together.</p>
+        <p style="text-align: center;">- Updated ESP32 code with additional BMP readings - </p>
+        <br><img src="./img/ESP32_GPS_BMP_Code.png" class="center">
+        <p style="text-align: center;">- ESP32 output from both GPS & BMP - </p>
+        <br><img src="./img/ESP32_Output_BmpAltitude.png" class="center">
+        <br><img src="./img/ESP32_GPS_BMP_Output.png" class="center">
+        <p style="text-align: center;">- MySQL Database with BMP altitude and floor estimation data appended- </p>
+        <br><img src="./img/PHP_GPS_BMP_Data.png" class="center">
+        <br><br>
         <br>
         <a class="button-nav-back" href="#Top_Nav">Back to top</a>
         <br><br>
