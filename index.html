@@ -146,32 +146,32 @@
         <h2>- Week 3 -</h2>
         <img src="./img/Materials.jpg" class="center"><br>
         <p>
-            Finally, after a week of waiting, I was finally able to get my hands on the ESP32 NodeMCU, a breadboard, and
+            Finally, after a week of waiting, I was finally able to get my hands on the ESP32 Nodemcu, a breadboard, and
             a couple of jumper wires. This mark the start and beginning of my journey to create the SEER GPS Tracker.
             Despite not having the GPS Tracker device yet, i have initiated the process of conducting and testing the
-            evaluation of the ESP32 NodeMCU's functionality to ensure that it is in a proper working condition.
+            evaluation of the ESP32 Nodemcu's functionality to ensure that it is in a proper working condition.
         </p>
         <p style="text-align: center;">- Arduino Board Manager - </p>
         <img src="./img/Arduino_BM.png" class="center">
         <p style="text-align: center;">- Blink Start Code - </p>
         <img src="./img/Blink_Start.png" class="center"><br>
         <p>
-            To begin testing the functionality of the ESP32 NodeMCU development board, I utilized the Arduino IDE,
+            To begin testing the functionality of the ESP32 Nodemcu development board, I utilized the Arduino IDE,
             an open-source integrated development environment that enables users to write, compile, and upload code to
-            Arduino boards. Since the ESP32 NodeMCU board is compatible with the Arduino IDE, I decided to use this
+            Arduino boards. Since the ESP32 Nodemcu board is compatible with the Arduino IDE, I decided to use this
             application to test its functionality.
             <br><br>
-            Secondly, to ensure that my ESP32 NodeMCU board is properly supported by the Arduino IDE, I installed both
+            Secondly, to ensure that my ESP32 Nodemcu board is properly supported by the Arduino IDE, I installed both
             the Arduino
             and Espressif Systems board packages for the ESP32. These packages contain all of the necessary files for
             the Arduino IDE to compile and upload code to ESP32 boards. This is important because different Arduino
             boards use different microcontrollers, and the Arduino IDE needs to know which microcontroller it is
             generating code for in order to produce the correct machine code.
             <br><br>
-            Lastly, i made use of an online simple testing blink start.ino file for testing. Since the ESP32 NodeMCU
+            Lastly, i made use of an online simple testing blink start.ino file for testing. Since the ESP32 Nodemcu
             has a built-in LED that can be controlled using the same digital pin as the Arduino board. To test the
-            functionality of the ESP32 NodeMCU, i uploaded the blink start code to the ESP32 NodeMCU and observe the
-            behavior of the built-in LED. If the LED blinks on and off every second, then the ESP32 NodeMCU is
+            functionality of the ESP32 Nodemcu, i uploaded the blink start code to the ESP32 Nodemcu and observe the
+            behavior of the built-in LED. If the LED blinks on and off every second, then the ESP32 Nodemcu is
             functioning properly.
 
             <br><br><img src="./img/ESP32_Testing.gif" class="center"><br>
@@ -198,7 +198,7 @@
             Website link: <a
                 href="https://makersportal.com/blog/portable-gps-tracker-with-arduino">https://makersportal.com/blog/portable-gps-tracker-with-arduino</a>
             <br><br>
-            At the current moment, my team and i are limited to only ESP32 NodeMCU and the python script guide (from
+            At the current moment, my team and i are limited to only ESP32 Nodemcu and the python script guide (from
             makersportal) that is available to
             be worked and improved on. Hence, I decided to fill in randomly generated latitude & longtitude around Ngee
             Ann Polytechnic in a csv file to try and test if the python script is capable of plotting
@@ -238,13 +238,13 @@
         <img src="" class="center">-->
         <p style="text-align: center;">- Day 1 - </p>
         <p>
-            The first day of the hackathon, the long-awaited GPS Tracker finally arrived. I quickly got to work and connected it to my ESP32 NodeMCU to set the integration of the C++ code to bring the entire GPS Tracker system up. However, upon executing my first code sketch, the GPS Tracker failed to function as intended. 
+            The first day of the hackathon, the long-awaited GPS Tracker finally arrived. I quickly got to work and connected it to my ESP32 Nodemcu to set the integration of the C++ code to bring the entire GPS Tracker system up. However, upon executing my first code sketch, the GPS Tracker failed to function. 
             <br><br>
-            The root cause of the malfunctioning GPS Tracker came from an error in referencing the wrong version of the ESP32 NodeMCU pin layout. Thus, leading to an incorrect pin configuration for the GPS Tracker. This mismatch between the expected and actual pin connections prevented the ESP32 NodeMCU from effectively establishing a connection and communicating with the GPS Tracker, rendering the entire system inoperable.
+            The root cause of the malfunctioning GPS Tracker came from an error in referencing the wrong version of the ESP32 Nodemcu pin layout. Thus, leading to an incorrect pin configuration for the GPS Tracker. This mismatch between the expected and actual pin connections prevented the ESP32 Nodemcu from effectively establishing a connection and communicating with the GPS Tracker, rendering the entire system inoperable.
             <br><br>
             After some alterations, the output initially showed "unknown" location but displayed the correct date. However, rerunning the code caused a glitch, and the date reverted to 2001. Suspecting that there might be a CMOS battery issue, i researched more about the GPS device. The online research revealed that the Neo-M6 GPS HAT with Antenna for Raspberry Pi lacks a CMOS battery for date maintenance. It relies on the Raspberry Pi's power supply, losing date and time information when the Raspberry Pi is turned off.
         </p><br>
-        <p style="text-align: center;">- ESP32 NodeMCU C++ Code - </p>
+        <p style="text-align: center;">- ESP32 Nodemcu C++ Code - </p>
         <br>
         <img src="./img/Seer_GPS_C1.png" class="center">
         <img src="./img/Seer_GPS_C2.png" class="center"><br><br>
@@ -291,7 +291,7 @@
         <br><img src="./img/Technical_Solutions.png" class="center"><br>
         <p style="text-align: center;">- Updated Technical Solutions Explanation - </p>
         <p>
-            Firstly, the ESP32 NodeMCU with its built-in WiFi capabilities can effectively communicate with web servers and send data. In this scenario, the ESP32 will be used to collect the GPS coordinates, which will then be transmitted to a MySQL database via an HTTP POST request to the PHP Webpage. PHP, a scripting language, will handle the server-side processing of receiving the data from the ESP32, and storing it in the MySQL database. Next, a python script with multiple libraries such as matplotlib and cartopy will be used to plot out the entire route and pathway of the security guard to visualise for areas of improvements.
+            Firstly, the ESP32 Nodemcu with its built-in WiFi capabilities can effectively communicate with web servers and send data. In this scenario, the ESP32 will be used to collect the GPS coordinates, which will then be transmitted to a MySQL database via an HTTP POST request to the PHP Webpage. PHP, a scripting language, will handle the server-side processing of receiving the data from the ESP32, and storing it in the MySQL database. Next, a python script with multiple libraries such as matplotlib and cartopy will be used to plot out the entire route and pathway of the security guard to visualise for areas of improvements.
         </p>
         <br><br><br>
         <br>
@@ -418,11 +418,24 @@
 
     <div class="blog-post" id="week_14" style="background-color:lightskyblue;">
         <h2>- Week 14 -</h2>
-        <!--<img src="" height="250" width="600" class="center">
-        <img src="" class="center">-->
         <p>
-            ...
+            For week 14, to enhance security and enable tracking of the assigned security guard, a bluetooth feature is implemented on the ESP32 Nodemcu. This feature requires the security guard to establish a bluetooth connection with the ESP32 Nodemcu using their mobile phone before the seer tracking device can begin its pathway tracking.
+            <br><br>
+            This bluetooth feature will capture the bluetooth mac address of the security guard's mobile phone. Since bluetooth mac addresses are unique, it allows the benefit to be used for the identification of the security guard. The captured bluetooth mac address will be stored in the database records along with the GPS coordinates and altitude data.
+            <br><br>
+            However, after integrating the bluetooth code into the main GPS Tracker, an error occurred due to the storage space being exceeded. This was caused by multiple libraries with initialised objects that consumed a significant amount of storage space. 
+            <br><br>
+            After some online research to find solutions for this issue, I came across some potential solutions that involves using older versions of the libraries to reduce storage space. However, implementing these older versions may result in the loss of some functionalities. As a result, I have decided to test and explore alternative solutions in the following weeks.
         </p>
+        <br>
+        <p style="text-align: center;">- ESP32 Bluetooth Code - </p>
+        <br><img src="./img/ESP32_BT_Code.png" class="center">
+        <p style="text-align: center;">- ESP32 Bluetooth Output - </p>
+        <br><img src="./img/ESP32_BT_Output.png" class="center">
+        <img src="./img/ESP32_BT_Output2.png" class="center">
+        <p style="text-align: center;">- ESP32 storage exceeded error - </p>
+        <br><img src="./img/ESP32_Storage_Error.png" class="center">
+        <br><br>
         <br>
         <a class="button-nav-back" href="#Top_Nav">Back to top</a>
         <br><br>
