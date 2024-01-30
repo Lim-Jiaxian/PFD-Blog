@@ -34,7 +34,7 @@
     </div>
     <br><br><br>
     <br><br><br>
-    <div class="blog-post" id="week_1" style="background-color:lightblue;">
+    <div class="blog-post" id="week_1" style="background-color:lightsteelblue;">
         <h2>- Week 1 -</h2>
         <p>
             The first week of PFD lesson involves the objectives of undertaking real-life IT projects by making use of
@@ -56,7 +56,7 @@
     <br>
     <br>
 
-    <div class="blog-post" id="week_2" style="background-color:lightcoral;">
+    <div class="blog-post" id="week_2" style="background-color:lightblue;">
         <h2>- Week 2 -</h2>
         <p>
             After meeting with our lecturer, our team decided to discard our prior concept because it did not
@@ -142,7 +142,7 @@
     <br>
     <br>
 
-    <div class="blog-post" id="week_3" style="background-color:lightgoldenrodyellow;">
+    <div class="blog-post" id="week_3" style="background-color:lightskyblue;">
         <h2>- Week 3 -</h2>
         <img src="./img/Materials.jpg" class="center"><br>
         <p>
@@ -185,7 +185,7 @@
     <br>
     <br>
 
-    <div class="blog-post" id="week_4" style="background-color:lightgray;">
+    <div class="blog-post" id="week_4" style="background-color:lightsteelblue;">
         <h2>- Week 4 -</h2>
         <p>
             Moving onto week 4, although we were unable to obtain a GPS tracker, my team and I continued to work on
@@ -195,8 +195,7 @@
             relevant to our GPS location project, we decided to use the website as a fundamental foundation to guide,
             assist and enhance our SEER Project.
             <br><br>
-            Website link: <a
-                href="https://makersportal.com/blog/portable-gps-tracker-with-arduino">https://makersportal.com/blog/portable-gps-tracker-with-arduino</a>
+            Website link: <a href="https://makersportal.com/blog/portable-gps-tracker-with-arduino">https://makersportal.com/blog/portable-gps-tracker-with-arduino</a>
             <br><br>
             At the current moment, my team and i are limited to only ESP32 Nodemcu and the python script guide (from
             makersportal) that is available to
@@ -232,7 +231,7 @@
     <br>
     <br>
 
-    <div class="blog-post" id="week_5" style="background-color:lightgreen;">
+    <div class="blog-post" id="week_5" style="background-color: lightblue;">
         <h2>- Week 5 (Hackathon) -</h2><br>
         <!--<img src="" height="250" width="600" class="center">
         <img src="" class="center">-->
@@ -303,7 +302,7 @@
     <br>
     <br>
 
-    <div class="blog-post" id="break_week" style="background-color:lightpink;">
+    <div class="blog-post" id="break_week" style="background-color:lightskyblue;">
         <h2>- Break weeks -</h2>
         <p>
             After the valuable experience and knowledge learnt about requiring the Raspberry Pi to provide date and time for the Neo M6 GPS Hat. I decided to try and fix the problems that was unresolved back in the hackathon week. <br><br>
@@ -328,7 +327,7 @@
     <br>
     <br>
 
-    <div class="blog-post" id="week_12" style="background-color:lightsalmon;">
+    <div class="blog-post" id="week_12" style="background-color:lightsteelblue;">
         <h2>- Week 12 -</h2>
         <!--<img src="" height="250" width="600" class="center">
         <img src="" class="center">-->
@@ -373,7 +372,7 @@
     <br>
     <br>
 
-    <div class="blog-post" id="week_13" style="background-color:lightseagreen;">
+    <div class="blog-post" id="week_13" style="background-color:lightblue;">
         <h2>- Week 13 -</h2>
         <!--<img src="" height="250" width="600" class="center">
         <img src="" class="center">-->
@@ -445,13 +444,37 @@
     <br>
     <br>
 
-    <div class="blog-post" id="week_15" style="background-color:aquamarine;">
+    <div class="blog-post" id="week_15" style="background-color: lightsteelblue;">
         <h2>- Week 15 -</h2>
         <!--<img src="" height="250" width="600" class="center">
         <img src="" class="center">-->
         <p>
-            ...
+            In week 15, I discovered a more effective solution to address the storage space problem with the ESP32 Nodemcu without the need to downgrade the verions of libraries that risk the chances of some loss functionalities. 
+            <br><br>
+            Switching the board selection from DOIT ESP32 DEVKIT V1 to ESP32 Dev Module was necessary as it offers a larger flash memory size of 4MB, which is divided into 2MB for the program and 2MB for the SPIFFS file system. On the other hand, the DOIT ESP32 DEVKIT V1 only provides 1.25 MB of program storage space and 0.3125 MB of dynamic memory (RAM).
+            <br><br>
+            By modifying the partition scheme that dictates the allocation of memory on the ESP32, I was able to allocate the available 4MB of flash memory more efficiently. By default, the partition scheme assigns 1.2MB to the program and 1.5MB to the SPIFFS file system. However, this configuration doesn't offer sufficient space for the program to function optimally. To overcome this limitation, I adjusted the partition scheme to allocate 2MB for the program and 2MB for the SPIFFS file system, which successfully resolved the storage space issue.
+            <br><br>
+            Solution of partition link: <a href="https://forum.arduino.cc/t/esp32-how-to-change-partition-table-with-ide-2-0/971252">https://forum.arduino.cc/t/esp32-how-to-change-partition-table-with-ide-2-0/971252</a>
+            <br><br>
+            Besides that, I updated the database setup script to include the bluetooth mac address field in the records table with a character length of 17 that is not null. Mobile phone's bluetooth mac address is 17 characters long, inclusive of semicolons. 
+            I also successfully integrated the bluetooth feature into the main SEER Tracker code. The ESP32 Nodemcu is now able to establish a bluetooth connection with the security guard's mobile phone and capture the bluetooth mac address. The captured bluetooth mac address is then stored in the database records along with the GPS coordinates and altitude data. Should the bluetooth connection be lost, the ESP32 Nodemcu will only continue tracking the pathway once the bluetooth connection is restablished.
+            <br><br>
+            Obtained new jumper wires to allow better fiting to the breadboard. The GPS and BMP modules are both placed on the breadboard and connected to the ESP32 Nodemcu via male to male and female to female jumper wires.
         </p>
+        <p style="text-align: center;">- ESP32 Board Selection - </p>
+        <br><img src="./img/ESP32_Board_Selection.png" class="center">
+        <p style="text-align: center;">- ESP32 Partition Scheme - </p>
+        <br><img src="./img/ESP32_Partition_Scheme.png" class="center">
+        <p style="text-align: center;">- Update DB Script with Bluetooth - </p>
+        <br><img src="./img/DB_Setup_BT.png" class="center">
+        <p style="text-align: center;">- ESP32 Bluetooth Function Integration to main SEER Tracker - </p>
+        <br><img src="./img/ESP32_BT_Function.png" class="center">
+        <p style="text-align: center;">- ESP32 SEER Tracker Output - </p>
+        <br><img src="./img/ESP32_BT_Output3.png" class="center">
+        <p style="text-align: center;">- ESP32 with new jumper wires - </p>
+        <br><img src="./img/ESP32_Breadboard.jpg" class="center">
+        <br><br>
         <br>
         <a class="button-nav-back" href="#Top_Nav">Back to top</a>
         <br><br>
@@ -461,6 +484,36 @@
     <br>
     <br>
     <br>
+
+    <div class="blog-post" id="week_16" style="background-color:lightblue;">
+        <h2>- Week 16 -</h2>
+        <!--<img src="" height="250" width="600" class="center">
+        <img src="" class="center">-->
+        <p>
+            
+        </p>
+        <br>
+        <a class="button-nav-back" href="#Top_Nav">Back to top</a>
+        <br><br>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="blog-post" id="week_17" style="background-color:lightskyblue;">
+        <h2>- Week 17 -</h2>
+        <!--<img src="" height="250" width="600" class="center">
+        <img src="" class="center">-->
+        <p>
+            
+        </p>
+        <br>
+        <a class="button-nav-back" href="#Top_Nav">Back to top</a>
+        <br><br>
+    </div>
+
+
     <p class="inset"></p><br><br>
 </body>
 
