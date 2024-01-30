@@ -155,6 +155,10 @@ transform: translateY(-2px);
 box-shadow: white 0 3px 7px inset;
 transform: translateY(2px);
 }
+video{
+    width: 100%;
+    height: auto;
+}
 @media only screen and (max-width: 900px) {
     .Top_Nav_Bar{
         width: 90%;

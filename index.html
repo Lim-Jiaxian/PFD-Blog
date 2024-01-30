@@ -31,6 +31,7 @@
         <a class="button-nav" href="#week_14">Week 14</a>
         <a class="button-nav" href="#week_15">Week 15</a>
         <a class="button-nav" href="#week_16">Week 16</a>
+        <a class="button-nav" href="#week_17">Week 17</a>
     </div>
     <br><br><br>
     <br><br><br>
@@ -360,7 +361,7 @@
         <br><img src="./img/ESP32_JsonCode.png" class="center">
         <p style="text-align: center;">- ESP32 Serial Output - </p>
         <br><img src="./img/ESP32_JsonOutput.png" class="center">
-        <p style="text-align: center;">- phpMyAdmin Mysql Database records - </p>
+        <p style="text-align: center;">- Mysql Database records - </p>
         <br><img src="./img/PHP_MysqlDB.png" class="center">
         <br><br>
         <br>
@@ -446,32 +447,39 @@
 
     <div class="blog-post" id="week_15" style="background-color: lightsteelblue;">
         <h2>- Week 15 -</h2>
-        <!--<img src="" height="250" width="600" class="center">
-        <img src="" class="center">-->
         <p>
             In week 15, I discovered a more effective solution to address the storage space problem with the ESP32 Nodemcu without the need to downgrade the verions of libraries that risk the chances of some loss functionalities. 
             <br><br>
             Switching the board selection from DOIT ESP32 DEVKIT V1 to ESP32 Dev Module was necessary as it offers a larger flash memory size of 4MB, which is divided into 2MB for the program and 2MB for the SPIFFS file system. On the other hand, the DOIT ESP32 DEVKIT V1 only provides 1.25 MB of program storage space and 0.3125 MB of dynamic memory (RAM).
             <br><br>
-            By modifying the partition scheme that dictates the allocation of memory on the ESP32, I was able to allocate the available 4MB of flash memory more efficiently. By default, the partition scheme assigns 1.2MB to the program and 1.5MB to the SPIFFS file system. However, this configuration doesn't offer sufficient space for the program to function optimally. To overcome this limitation, I adjusted the partition scheme to allocate 2MB for the program and 2MB for the SPIFFS file system, which successfully resolved the storage space issue.
-            <br><br>
-            Solution of partition link: <a href="https://forum.arduino.cc/t/esp32-how-to-change-partition-table-with-ide-2-0/971252">https://forum.arduino.cc/t/esp32-how-to-change-partition-table-with-ide-2-0/971252</a>
-            <br><br>
-            Besides that, I updated the database setup script to include the bluetooth mac address field in the records table with a character length of 17 that is not null. Mobile phone's bluetooth mac address is 17 characters long, inclusive of semicolons. 
-            I also successfully integrated the bluetooth feature into the main SEER Tracker code. The ESP32 Nodemcu is now able to establish a bluetooth connection with the security guard's mobile phone and capture the bluetooth mac address. The captured bluetooth mac address is then stored in the database records along with the GPS coordinates and altitude data. Should the bluetooth connection be lost, the ESP32 Nodemcu will only continue tracking the pathway once the bluetooth connection is restablished.
-            <br><br>
-            Lastly, I obtained new jumper wires to allow better fiting to the breadboard. The GPS and BMP modules are both placed on the breadboard and connected to the ESP32 Nodemcu via male to male and female to female jumper wires.
-        </p><br>
+        </p>
         <p style="text-align: center;">- ESP32 Board Selection - </p>
         <br><img src="./img/ESP32_Board_Selection.png" class="center">
+        <br><br>
+        <p>
+            By modifying the partition scheme that dictates the allocation of memory on the ESP32, I was able to allocate the available 4MB of flash memory more efficiently. By default, the partition scheme assigns 1.2MB to the program and 1.5MB to the SPIFFS file system. However, this configuration doesn't offer sufficient space for the program to function optimally. To overcome this limitation, I adjusted the partition scheme to allocate 2MB for the program and 2MB for the SPIFFS file system, which successfully resolved the storage space issue.   
+        </p><br><br> 
         <p style="text-align: center;">- ESP32 Partition Scheme - </p>
-        <br><img src="./img/ESP32_Partition_Scheme.png" class="center">
+        <br><img src="./img/ESP32_Partition_Scheme.png" class="center"><br>
+        <p>Solution of partition link: <a href="https://forum.arduino.cc/t/esp32-how-to-change-partition-table-with-ide-2-0/971252">https://forum.arduino.cc/t/esp32-how-to-change-partition-table-with-ide-2-0/971252</a></p>
+
+        <br><br>
+        <p>
+        Besides that, I updated the database setup script to include the bluetooth mac address field in the records table with a character length of 17 that is not null. Mobile phone's bluetooth mac address is 17 characters long, inclusive of semicolons. 
+        I also successfully integrated the bluetooth feature into the main SEER Tracker code. The ESP32 Nodemcu is now able to establish a bluetooth connection with the security guard's mobile phone and capture the bluetooth mac address. The captured bluetooth mac address is then stored in the database records along with the GPS coordinates and altitude data. Should the bluetooth connection be lost, the ESP32 Nodemcu will only continue tracking the pathway once the bluetooth connection is restablished.
+        <br><br>
+        </p>
         <p style="text-align: center;">- Update DB Script with Bluetooth - </p>
         <br><img src="./img/DB_Setup_BT.png" class="center">
         <p style="text-align: center;">- ESP32 Bluetooth Function Integration to main SEER Tracker - </p>
         <br><img src="./img/ESP32_BT_Function.png" class="center">
         <p style="text-align: center;">- ESP32 SEER Tracker Output - </p>
         <br><img src="./img/ESP32_BT_Output3.png" class="center">
+        <br><br>
+        <p>
+            Lastly, I obtained new jumper wires to allow better fiting to the breadboard. The GPS and BMP modules are both placed on the breadboard and connected to the ESP32 Nodemcu via male to male and female to female jumper wires.
+        </p>
+        <br>
         <p style="text-align: center;">- ESP32 with new jumper wires - </p>
         <br><img src="./img/ESP32_Breadboard.jpg" class="center"><br>
         <br><br>
@@ -479,20 +487,30 @@
         <a class="button-nav-back" href="#Top_Nav">Back to top</a>
         <br><br>
     </div>
-    
-
     <br>
     <br>
     <br>
 
     <div class="blog-post" id="week_16" style="background-color:lightblue;">
         <h2>- Week 16 -</h2>
-        <!--<img src="" height="250" width="600" class="center">
-        <img src="" class="center">-->
         <p>
-            
+            Previously, i have referenced the elevation / altitude above sea level around Ngee Ann Polytechnic from the website <a href="https://www.freemaptools.com/elevation-finder.htm">(Free Map Tools)</a> to obtain the altitude data, the average elevation altitude around Ngee Ann Polytechnic is about 34.8 meters.
+            Using this reference point, the altitude from ground is calculated by subtracting the altitude above sea level from the altitude from the BMP sensor module. The altitude from ground is then divided by 3.5 meters, which is the average floor height of a building. The result is then rounded up to the nearest integer to obtain the estimated floor level. If the altitude falls into a negative value, the estimated floor level is set to 0.
+            <br><br>
+            On week 16, I decided to verify the accuracy of these readings by comparing them to the actual floor level. However, the accuracy of the altitude readings from the BMP sensor module shifts depending on external factors just such weather conditions. Thus, affecting the accuracy of the estimated floor level. As a result, I made temporarily adjustments to set a temporarily reference point to test if the barometric pressure sensor could detect altitude changes from stairs.
+            <br><br>
+
         </p>
-        <br>
+        <p style="text-align: center;">- Ngee Ann Polytechnic Elevation / Altitude above sea level  - </p>
+        <br><img src="./img/NP_Altitude.png" class="center"><br>
+        <p style="text-align: center;">- Testing Altitude readings with stairs - </p>
+        <br><img src="./img/Stairs.jpg" class="center"><br>
+        <br><img src="./img/Stairs2.jpg" class="center"><br>
+        <p style="text-align: center;">- Video of altitude & estimation floor readings - </p>
+        <video controls="controls" style="display: block; margin: 0 auto;">
+            <source src="./vid/altitude_cut.mp4" type="video/mp4" />
+        </video><br><br>
+        <br><br>
         <a class="button-nav-back" href="#Top_Nav">Back to top</a>
         <br><br>
     </div>
