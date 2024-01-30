@@ -279,7 +279,7 @@
             Our prototype is a conventional security solutions by incorporating features and adopting an innovative approach. At the core of our system, a GPS tracking technology that continuously monitors the security guard's movements, providing precise information about their patrol route. This real-time tracking capability goes beyond just location monitoring; it captures the guard's pace, direction, and any pauses or deviations, creating a comprehensive picture of their patrol activities.
             <br><br>
             Complementing the GPS tracking system is a data analytics platform that transforms raw patrol data into valuable insights on a cartopy map. Our platform analyzes patrol patterns, identifying areas of frequent coverage, potential gaps in security, and any unusual deviations from established routes. These insights empower security managers to optimize patrol routes, ensuring that every area receives the necessary attention.
-        </p><br>
+        </p>
         <p style="text-align: center;">- Slides containing: Problem Statements, Elevator Pitch and Potential issues - </p>
         <br><img src="./img/Problem_Statement.png" class="center">
         <img src="./img/Elevator_Pitch.png" class="center">
@@ -460,8 +460,8 @@
             Besides that, I updated the database setup script to include the bluetooth mac address field in the records table with a character length of 17 that is not null. Mobile phone's bluetooth mac address is 17 characters long, inclusive of semicolons. 
             I also successfully integrated the bluetooth feature into the main SEER Tracker code. The ESP32 Nodemcu is now able to establish a bluetooth connection with the security guard's mobile phone and capture the bluetooth mac address. The captured bluetooth mac address is then stored in the database records along with the GPS coordinates and altitude data. Should the bluetooth connection be lost, the ESP32 Nodemcu will only continue tracking the pathway once the bluetooth connection is restablished.
             <br><br>
-            Obtained new jumper wires to allow better fiting to the breadboard. The GPS and BMP modules are both placed on the breadboard and connected to the ESP32 Nodemcu via male to male and female to female jumper wires.
-        </p>
+            Lastly, I obtained new jumper wires to allow better fiting to the breadboard. The GPS and BMP modules are both placed on the breadboard and connected to the ESP32 Nodemcu via male to male and female to female jumper wires.
+        </p><br>
         <p style="text-align: center;">- ESP32 Board Selection - </p>
         <br><img src="./img/ESP32_Board_Selection.png" class="center">
         <p style="text-align: center;">- ESP32 Partition Scheme - </p>
@@ -473,7 +473,7 @@
         <p style="text-align: center;">- ESP32 SEER Tracker Output - </p>
         <br><img src="./img/ESP32_BT_Output3.png" class="center">
         <p style="text-align: center;">- ESP32 with new jumper wires - </p>
-        <br><img src="./img/ESP32_Breadboard.jpg" class="center">
+        <br><img src="./img/ESP32_Breadboard.jpg" class="center"><br>
         <br><br>
         <br>
         <a class="button-nav-back" href="#Top_Nav">Back to top</a>
