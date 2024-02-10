@@ -42,7 +42,7 @@
             scrum (Lightweight Framework) via different challenge statements. My team was assigned the challenge
             statement
             of "Data Collection Applications". <br><br> After a brainstorming session, we
-            arrived at a concept that involves utilizing both a mobile phone and a wristband to monitor the wearer's
+            arrived at a concept that involves utilising both a mobile phone and a wristband to monitor the wearer's
             location. Additionally, we also plan to leverage the built-in Bluetooth functionality to communicate with
             other nearby devices. However, this idea concept is quite similar to an existing application called
             SGTRACETOGETHER. As a
@@ -466,14 +466,14 @@
         <br><br>
         <p>
         Besides that, I updated the database setup script to include the bluetooth mac address field in the records table with a character length of 17 that is not null. Mobile phone's bluetooth mac address is 17 characters long, inclusive of semicolons. 
-        I also successfully integrated the bluetooth feature into the main SEER Tracker code. The ESP32 Nodemcu is now able to establish a bluetooth connection with the security guard's mobile phone and capture the bluetooth mac address. The captured bluetooth mac address is then stored in the database records along with the GPS coordinates and altitude data. Should the bluetooth connection be lost, the ESP32 Nodemcu will only continue tracking the pathway once the bluetooth connection is restablished.
+        I also successfully integrated the bluetooth feature into the main SEER GPS Tracker code. The ESP32 Nodemcu is now able to establish a bluetooth connection with the security guard's mobile phone and capture the bluetooth mac address. The captured bluetooth mac address is then stored in the database records along with the GPS coordinates and altitude data. Should the bluetooth connection be lost, the ESP32 Nodemcu will only continue tracking the pathway once the bluetooth connection is restablished.
         <br><br>
         </p>
         <p style="text-align: center;">- Update DB Script with Bluetooth - </p>
         <br><img src="./img/DB_Setup_BT.png" class="center">
-        <p style="text-align: center;">- ESP32 Bluetooth Function Integration to main SEER Tracker - </p>
+        <p style="text-align: center;">- ESP32 Bluetooth Function Integration to main SEER GPS Tracker - </p>
         <br><img src="./img/ESP32_BT_Function.png" class="center">
-        <p style="text-align: center;">- ESP32 SEER Tracker Output - </p>
+        <p style="text-align: center;">- ESP32 SEER GPS Tracker Output - </p>
         <br><img src="./img/ESP32_BT_Output3.png" class="center">
         <br><br>
         <p>
@@ -495,21 +495,61 @@
         <h2>- Week 16 -</h2>
         <p>
             Previously, i have referenced the elevation / altitude above sea level around Ngee Ann Polytechnic from the website <a href="https://www.freemaptools.com/elevation-finder.htm">(Free Map Tools)</a> to obtain the altitude data, the average elevation altitude around Ngee Ann Polytechnic is about 34.8 meters.
-            Using this reference point, the altitude from ground is calculated by subtracting the altitude above sea level from the altitude from the BMP sensor module. The altitude from ground is then divided by 3.5 meters, which is the average floor height of a building. The result is then rounded up to the nearest integer to obtain the estimated floor level. If the altitude falls into a negative value, the estimated floor level is set to 0.
+            Using this reference point, the altitude from ground is calculated by subtracting the altitude above sea level from the altitude from the BMP sensor module. The altitude from ground is then divided by 3.5 meters, which is the average floor height of a building. The result is then rounded up to the nearest integer to obtain the estimated floor level. If the altitude falls into a negative value, the estimated floor level is set to 1.
             <br><br>
-            On week 16, I decided to verify the accuracy of these readings by comparing them to the actual floor level. However, the accuracy of the altitude readings from the BMP sensor module shifts depending on external factors just such weather conditions. Thus, affecting the accuracy of the estimated floor level. As a result, I made temporarily adjustments to set a temporarily reference point to test if the barometric pressure sensor could detect altitude changes from stairs.
+            On week 16, I decided to verify the accuracy of these readings by comparing them to the actual floor level near the Convention Centre stairs. However, the accuracy of the altitude readings from the BMP sensor module shifts depending on external factors just such weather conditions. Thus, affecting the accuracy of the estimated floor level. As a result, I made temporarily adjustments to set a temporarily reference point to test if the barometric pressure sensor could detect altitude changes from stairs.
             <br><br>
-
         </p>
         <p style="text-align: center;">- Ngee Ann Polytechnic Elevation / Altitude above sea level  - </p>
         <br><img src="./img/NP_Altitude.png" class="center"><br>
-        <p style="text-align: center;">- Testing Altitude readings with stairs - </p>
+        <p style="text-align: center;">- Testing Altitude near Convention Centre - </p>
         <br><img src="./img/Stairs.jpg" class="center"><br>
         <br><img src="./img/Stairs2.jpg" class="center"><br>
-        <p style="text-align: center;">- Video of altitude & estimation floor readings - </p>
+        <br>
+        <p>            
+            In addition to that, I conducted further altitude testing in Blk 27 / 31 to validate the precision of the altitude readings and floor estimation. As the ground elevation in Blk 27 / 31 differs from Convention Centre, I re-adjusted the reference point to the ground altitude readings of Blk 27 / 31, which measured approximately 27.09 meters after conducting an altitude survey by walking around the ground level area near the lift. By utilising the ground reference point, the estimated floor is calculated by subtracting the ground altitude from the current altitude followed by dividing the height difference between each floor. This time, the estimated floor was accurate and aligned with the actual floor level.
+            <br><br>
+            The main reason why the altitude fluctates near the Convention Centre stairs is due to the change in air pressure. The BMP sensor module measures the air pressure, which is used to calculate the altitude. In open spaces, the sensor is exposed to direct sunlight, wind, and other environmental conditions that can cause fluctuations in atmospheric pressure. On the other hand, a shaded area near the lift of Blk 27 / 31 experiences more stable atmospheric conditions due to reduced exposure to direct sunlight and wind. As a result, the altitude readings are more consistent and accurate.
+        </p>
+
+        <p style="text-align: center;">- Testing Altitude readings in Blk 27 / 31 - </p>
+        <br><img src="./img/Blk_31_F1.jpg" class="center"><br>
+        <br><img src="./img/Blk_31_F5.jpg" class="center"><br>
+        <p>
+            <b>*Images are cropped to the best fit that shows both the floor level and the Serial monitor from the laptop*</b><br><br>
+            <b>*Right click and open these images in new tab to zoom into Arduino IDE Serial monitor to verify altitude & floor estimation readings*</b>
+        </p><br><br>
+
+        <p style="text-align: center;">- Video of ESP32 NodeMCU Function Breakdown - </p>
         <video controls="controls" style="display: block; margin: 0 auto;">
-            <source src="./vid/altitude_cut.mp4" type="video/mp4" />
-        </video><br><br>
+            <source src="./vid/ESP32 NodeMCU Function Breakdown (SEER Tracker).mp4" type="video/mp4" />
+        </video><br>
+        <p>ESP32 NodeMCU Function Break Youtube Link: <a href="https://youtu.be/0ExThPmD8XQ">https://youtu.be/0ExThPmD8XQ</a></p>
+        <br>
+
+
+        <p style="text-align: center;">- Updated Technical Solution for SEER GPS Tracker  - </p>
+        <br><img src="./img/Updated_Technical_Solutions.PNG" class="center"><br>
+
+        <p>
+            The technologies implemented in the SEER GPS tracker is an ESP32 NodeMCU that is connected to both the GPS Tracker device and Barometric pressure sensor to capture and collect GEO location data and altitude readings. With the ESP32 NodeMCU's built-in wifi and bluetooth capabilities, it can effectively ensure identity of the security guard that is connected to the SEER GPS Tracker via bluetooth from their phones. And with wifi connection, it can send data through a HTTP POST to the php script residing on the apache server. PHP will then handle the server-side processing of receiving the data from ESP32 and storing it into mysql database. 
+            <br><br>
+            Next, pyscript and flask is utilized ensure that the python script with multiple libraries such as matplotlib and cartopy, could be used on the web application that is the primary source to display and plot out the entire route and pathway of the security guard to visualise for potential blind spot areas that is not covered.
+        </p>
+
+        <br>
+        <p style="text-align: center;">- SEER GPS Tracker Video Demonstration - </p>
+        <video controls="controls" style="display: block; margin: 0 auto;">
+            <source src="./vid/PFD SEER GPS Tracker Video Demonstration.mp4" type="video/mp4" />
+        </video><br>
+        <p>PFD SEER GPS Tracker Demonstration Youtube Link: <a href="https://youtu.be/Ujx7gr40co8">https://youtu.be/Ujx7gr40co8</a></p>
+        <br>
+
+
+
+
+        
+        <br><br>
         <br><br>
         <a class="button-nav-back" href="#Top_Nav">Back to top</a>
         <br><br>
