@@ -39,7 +39,6 @@ h2{
     display: flex;
     justify-content: center;
 }
-
 .blog-post{
     margin: auto;
     width: 850px;
@@ -159,6 +158,14 @@ video{
     width: 100%;
     height: auto;
 }
+.midImage{
+    /* height: 400px; width: 750px; */
+    width: 750px;
+    height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 @media only screen and (max-width: 900px) {
     .Top_Nav_Bar{
         width: 90%;
@@ -174,6 +181,10 @@ video{
     }
     .button-nav-back{
         font-size: 2vw;
+    }
+    .midImage{
+        width: 90%;
+        height: auto;
     }
 
 }
